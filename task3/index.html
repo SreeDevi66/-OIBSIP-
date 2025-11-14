@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="app-title">📝 My To-Do List</h1>
+            <p class="app-subtitle">Organize your daily tasks efficiently</p>
+        </header>
+
+        <!-- Add Task Section -->
+        <section class="add-task-section">
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    class="task-input" 
+                    placeholder="Enter a new task..."
+                    maxlength="200"
+                >
+                <button id="addTaskBtn" class="btn btn-add">
+                    <span class="btn-icon">+</span>
+                    <span class="btn-text">Add Task</span>
+                </button>
+            </div>
+            <p class="task-count" id="taskCount">Total Tasks: 0 | Pending: 0 | Completed: 0</p>
+        </section>
+
+        <!-- Filter Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-filter="all">All Tasks</button>
+            <button class="tab-btn" data-filter="pending">Pending Tasks</button>
+            <button class="tab-btn" data-filter="completed">Completed Tasks</button>
+        </div>
+
+        <!-- Tasks Container -->
+        <section class="tasks-section">
+            <div id="tasksContainer" class="tasks-container">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">📋</div>
+                <p class="empty-text">No tasks yet!</p>
+                <p class="empty-subtext">Add a task to get started</p>
+            </div>
+        </section>
+
+        <!-- Clear All Button -->
+        <div class="clear-section">
+            <button id="clearCompletedBtn" class="btn btn-clear">
+                Clear Completed Tasks
+            </button>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Task</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <input 
+                    type="text" 
+                    id="editTaskInput" 
+                    class="task-input"
+                    placeholder="Edit your task..."
+                    maxlength="200"
+                >
+            </div>
+            <div class="modal-footer">
+                <button id="cancelEditBtn" class="btn btn-secondary">Cancel</button>
+                <button id="saveEditBtn" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

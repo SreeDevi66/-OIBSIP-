@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Secured Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <span class="logo">🔐</span>
+                    <span class="brand-name">Secure Dashboard</span>
+                </div>
+                <div class="nav-menu">
+                    <span class="user-welcome" id="userWelcome">Welcome, User!</span>
+                    <button class="btn btn-logout" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-main">
+            <div class="dashboard-content">
+                <!-- Welcome Section -->
+                <section class="dashboard-section welcome-section">
+                    <h1>Welcome to Your Dashboard! 🎉</h1>
+                    <p class="welcome-text">You have successfully logged in to the secured area.</p>
+                </section>
+
+                <!-- User Info Card -->
+                <section class="dashboard-section">
+                    <h2>Your Profile Information</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="info-icon">👤</div>
+                            <div class="info-content">
+                                <h3>Full Name</h3>
+                                <p id="userName">Loading...</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">📧</div>
+                            <div class="info-content">
+                                <h3>Email Address</h3>
+                                <p id="userEmail">Loading...</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">📅</div>
+                            <div class="info-content">
+                                <h3>Member Since</h3>
+                                <p id="memberSince">Loading...</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">🔑</div>
+                            <div class="info-content">
+                                <h3>Account Status</h3>
+                                <p class="status-active">Active</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Statistics Section -->
+                <section class="dashboard-section">
+                    <h2>Account Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="loginCount">0</div>
+                            <div class="stat-label">Total Logins</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-value" id="lastLogin">Never</div>
+                            <div class="stat-label">Last Login</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-value" id="sessionTime">0m</div>
+                            <div class="stat-label">Session Time</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section class="dashboard-section">
+                    <h2>Available Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h3>Secure Access</h3>
+                            <p>Your data is protected with industry-standard encryption</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">💾</div>
+                            <h3>Data Storage</h3>
+                            <p>All your information is safely stored locally</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">🔐</div>
+                            <h3>Password Protection</h3>
+                            <p>Your password is hashed and never stored in plain text</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3>Activity Tracking</h3>
+                            <p>Monitor your login activity and session information</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Actions Section -->
+                <section class="dashboard-section">
+                    <h2>Quick Actions</h2>
+                    <div class="actions-grid">
+                        <button class="action-btn" onclick="showUpdateProfile()">
+                            <span class="action-icon">✏️</span>
+                            <span>Update Profile</span>
+                        </button>
+                        <button class="action-btn" onclick="showChangePassword()">
+                            <span class="action-icon">🔑</span>
+                            <span>Change Password</span>
+                        </button>
+                        <button class="action-btn" onclick="viewActivity()">
+                            <span class="action-icon">📈</span>
+                            <span>View Activity</span>
+                        </button>
+                        <button class="action-btn btn-danger" onclick="deleteAccount()">
+                            <span class="action-icon">🗑️</span>
+                            <span>Delete Account</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p>&copy; 2024 Secure Authentication System. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
